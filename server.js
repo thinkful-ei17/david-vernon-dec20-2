@@ -82,6 +82,7 @@ app.put('/shopping-list/:id', jsonParser, (req, res) => {
     budget: req.body.budget
   });
   res.status(204).end();
+});
 
 app.delete('/shopping-list/:id', (req, res) => {
   ShoppingList.delete(req.params.id);
@@ -129,9 +130,10 @@ app.put('/recipes/:id', jsonParser, (req, res) => {
   Recipes.update({
     id: req.params.id,
     name: req.body.name,
-    budget: req.body.ingredients
+    ingredients: req.body.ingredients
   });
   res.status(204).end();
+});
 
 app.delete('/recipes/:id', (req, res) => {
   Recipes.delete(req.params.id);
